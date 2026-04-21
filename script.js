@@ -1,10 +1,3 @@
-// ====================================================
-// QUICKCOOL - MODERN HVAC WEBSITE
-// ====================================================
-
-// ====================================================
-// CONFIGURATION
-// ====================================================
 const CONFIG = {
     phoneNumber: '27818751906',
     email: 'quickcool.aircons@gmail.com',
@@ -119,11 +112,31 @@ class FormHandler {
 
     init() {
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        this.setupWhatsAppButton();
     }
 
     handleSubmit(e) {
-        e.preventDefault();
+        // Validate form before allowing submission to FormSubmit
+        if (!this.validate()) {
+            e.preventDefault();
+            return;
+        }
+        
+        // Allow form to submit to FormSubmit
+        // FormSubmit will handle the submission via the form's action attribute
+    }
 
+    setupWhatsAppButton() {
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.handleWhatsAppClick();
+            });
+        }
+    }
+
+    handleWhatsAppClick() {
         // Validate form
         if (!this.validate()) {
             return;
@@ -139,12 +152,6 @@ class FormHandler {
         // Open WhatsApp
         const whatsappURL = `https://wa.me/${CONFIG.phoneNumber}?text=${message}`;
         window.open(whatsappURL, '_blank', 'noopener,noreferrer');
-
-        // Reset form
-        this.form.reset();
-        
-        // Show success message
-        this.showSuccess();
     }
 
     validate() {
@@ -368,8 +375,3 @@ if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window) {
 
     $$('img[data-src]').forEach(img => imageObserver.observe(img));
 }
-
-// ====================================================
-// ANALYTICS (Optional - Add your tracking code)
-// ====================================================
-// You can add Google Analytics or other tracking here
