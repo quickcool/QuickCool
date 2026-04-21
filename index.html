@@ -619,7 +619,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
+ <section id="contact" class="contact">
         <div class="section-header">
             <h2>Get In Touch</h2>
             <p>Ready to upgrade your cooling? Contact us today.</p>
@@ -653,6 +653,58 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Contact Form -->
+            <form action="https://formsubmit.co/quickcool.aircons@gmail.com" method="POST" id="contactForm" class="contact-form" novalidate>
+                <!-- FormSubmit Security Settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Quote Request from QuickCool">
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required aria-label="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required aria-label="Your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required aria-label="Your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Needed *</label>
+                    <select id="service" name="service" required aria-label="Select service">
+                        <option value="">Choose a service...</option>
+                        <option value="installation">Installation</option>
+                        <option value="repairs">Repairs</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="commercial">Commercial Solutions</option>
+                        <option value="emergency">Emergency Service</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell Us More</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Any specific details about your needs..." aria-label="Your message"></textarea>
+                </div>
+
+                <!-- Button Container -->
+                <div class="button-container">
+                    <button type="submit" class="btn btn-primary">Send Quote Request</button>
+                    <a id="whatsappBtn"
+                       class="btn btn-success"
+                       target="_blank">
+                       💬 WhatsApp Quote
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
 
             <!-- Contact Form -->
            <form action="https://formsubmit.co/quickcool.aircons@gmail.com" method="POST" id="contactForm" class="contact-form" novalidate>
