@@ -655,7 +655,11 @@
             </div>
 
             <!-- Contact Form -->
-            <form id="contactForm" class="contact-form" novalidate>
+           <form action="https://formsubmit.co/quickcool.aircons@gmail.com" method="POST" id="contactForm" class="contact-form" novalidate>
+                <!-- FormSubmit Security Settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Quote Request from QuickCool">
+                
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required aria-label="Your full name">
