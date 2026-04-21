@@ -111,19 +111,24 @@ class FormHandler {
     }
 
     init() {
+        // Only validate on form submit, don't prevent default for FormSubmit
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
         this.setupWhatsAppButton();
     }
 
     handleSubmit(e) {
-        // Validate form before allowing submission to FormSubmit
+        console.log('Form submit event triggered');
+        
+        // Validate form
         if (!this.validate()) {
+            console.log('Validation failed - preventing submission');
             e.preventDefault();
             return;
         }
         
-        // Allow form to submit to FormSubmit
-        // FormSubmit will handle the submission via the form's action attribute
+        console.log('Validation passed - allowing FormSubmit to handle submission');
+        // Do NOT call preventDefault - let FormSubmit handle it naturally
+        // The form will POST to the action URL automatically
     }
 
     setupWhatsAppButton() {
